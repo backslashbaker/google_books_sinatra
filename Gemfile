@@ -6,6 +6,7 @@ gem 'httparty', '~> 0.16.3'
 group :development do
 
 	gem "rerun"
+	gem "awesome_print"
 
 end
 
