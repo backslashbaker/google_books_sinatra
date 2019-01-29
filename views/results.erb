@@ -1,3 +1,6 @@
-<h3>Book Title: <%= book.title %></h3>
-<h3>Book Author/s: <%= book.authors %></h3>
-<h3>Book Publisher: <%= book.publisher %></h3>
+<% books.each do |book| %>
+  <h3>Book Title: <%= book.title %></h3>
+  <h3>Book Author/s: <%= book.authors %></h3>
+  <h3>Book Publisher: <%= book.publisher %></h3>
+	<hr>
+<% end %>

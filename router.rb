@@ -12,7 +12,10 @@ end
 get '/search-books' do
   url = "https://www.googleapis.com/books/v1/volumes?q=#{params['search-term']}"
   response = HTTParty.get(url)
-  obj = JSON.parse(response.body)
-  book = Book.new(obj['items'][0])
-  erb :results, locals: { book: book }
+	result = JSON.parse(response.body)
+	raw_books = result['items']
+	books = raw_books.map do |raw_book|
+		Book.new(raw_book)
+	end
+  erb :results, locals: { books: books }
 end
