@@ -1,12 +1,12 @@
 require 'sinatra'
-require_relative 'name_modifier'
+require 'httparty'
+
 
 get '/' do
-  'Hello world!'
+	# response = HTTParty.get('https://www.googleapis.com/books/v1/volumes?q=harry+potter')
+	erb :index
 end
 
-get '/hello/:name' do
-  # matches "GET /hello/foo" and "GET /hello/bar"
-	# params['name'] is 'foo' or 'bar'
-	NameModifier.upcase_name(params['name'])
+get '/search-books' do
+
 end
