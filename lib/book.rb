@@ -4,7 +4,7 @@ class Book
   end
 
   def title
-	  volume_info['title']
+    volume_info['title']
   end
 
   def authors
